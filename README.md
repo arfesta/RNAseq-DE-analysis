@@ -54,14 +54,13 @@ Data Subject Type | Data File Type | Path | Notes
    Data prep includes everything from unpacking the original tar files recieved by the GSL up to estimating transcript               
       abundance with Salmon. Additionally, this step includes identification of the indicies used within both batches and creates an experimental info matrix containing all meta data from both batches.
       
-   See the [raw reads README](../rawreads/README.md) for step by step processing of files.  
+   See the [raw reads README](https://github.com/arfesta/Breeding-Value-Prediction/blob/master/disk6directory/rawreads/README.md) for step by step processing of files.  
 
 ### Step 2 - Load Count Data
       
-   Once counts have been estimated, the next step involves reading in the aligned technical, or biological, replicate counts using the tximport package.
+   Once counts have been estimated, the next step involves reading in the aligned biological replicate counts using the tximport package.
       
    Additionally, the phenotype and other sample meta-data is constructed for normalization.
    
    To see this process for **biological reps**, navigate to: [load counts bio rep html file](http://htmlpreview.github.com/?https://github.com/arfesta/Breeding-Value-Prediction/blob/master/disk6directory/analyses/step2.loadcounts/load.counts.html) which contains the complete markdown and output.
 
-   To see this process for **technical reps**, navigate to: [load counts tech rep html file](http://htmlpreview.github.com/?https://github.com/arfesta/Breeding-Value-Prediction/blob/master/disk6directory/analyses/step2.loadcounts/load.counts_techreps.html) which contains the complete markdown and output.
