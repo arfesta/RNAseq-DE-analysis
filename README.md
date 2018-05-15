@@ -6,7 +6,7 @@
   * [Abstract](#abstract)
   * [Background of samples](#background-of-samples)
   * [Location of data](#location-of-data)
-  * [Analyses](#analyses)
+  * [Methods](#methods)
     + [Step 1 - Data Prep](#step-1---data-prep)
     + [Step 2 - Load Count Data](#step-2---load-count-data)
     + [Step 3 - Conduct pairwise DE tests among families](#step-3---conduct-pairwise-de-tests-among-families)
@@ -46,7 +46,7 @@ Data Subject Type | Data File Type | Path | Notes
 |  |*phenotypes* | `./phenos` | `./EWfasta or ./LGEPfasta`
 
 
-## Analyses
+## Methods
 
 ### Step 1 - Data Prep
 
@@ -70,4 +70,13 @@ Data Subject Type | Data File Type | Path | Notes
   
  The result of this step is a list of 1596 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
  
- [Generate pairwise DE tests markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0.Rmd)
+ [Generate pairwise DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0.Rmd)
+ 
+ 
+### Step4 - Conduct DE tests among State of origin
+
+  Similar to conducting pairwise tests among all families, the same filter was applied so that only families which had **3 or more** bioloigcal replicates were kept for further analysis. However, an additional filter was applied here to remove all families which were not open-pollinated. The 41 families which passed this threshold were then used with the R package `DESeq2` to test for differential epxression among the following states `NC, SC, GA, FL, TX`
+  
+ The result of this step is a list of 840 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
+ 
+ [Generate State origin DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0_states.Rmd)
