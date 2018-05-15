@@ -9,6 +9,7 @@
   * [Analyses](#analyses)
     + [Step 1 - Data Prep](#step-1---data-prep)
     + [Step 2 - Load Count Data](#step-2---load-count-data)
+    + [Step 3 - Conduct pairwise DE tests among families](#step-3---conduct-pairwise-de-tests-among-families)
 
 ## Abstract
 
@@ -37,8 +38,6 @@ Data Subject Type | Data File Type | Path | Notes
 |  |*EW* | `./EW/lane01 ... ./lane12` | 
 |  |*LGEP* | `./LGEP/lane01 ... ./lane18` | 
 **salmon count files** | |`/media/disk6/ARF/RNASEQ/counts/86kSalmon` | Direcotries containing quant.sf files
-|  |*EW tech reps* | `./EW/lane01 ... ./lane12` | 
-|  |*LGEP tech reps* | `./LGEP/lane01 ... ./lane18` |
 |  |*EW bio reps* | `./bio_EW/Sample_<animal_id>/` | 
 |  |*LGEP bio reps* | `./bio_LGEP/Sample_<animal_id>/` | 
 **experimental data resources**  | | `/media/disk6/ARF/RNASEQ/Breeding-Value-Prediction/disk6directory/resources` | Experiment information
@@ -64,3 +63,11 @@ Data Subject Type | Data File Type | Path | Notes
    
    To see this process for **biological reps**, navigate to: [load counts bio rep html file](http://htmlpreview.github.com/?https://github.com/arfesta/Breeding-Value-Prediction/blob/master/disk6directory/analyses/step2.loadcounts/load.counts.html) which contains the complete markdown and output.
 
+
+### Step3 - Conduct pairwise DE tests among families
+
+  An initial filter was applied so that only families which had **3 or more** bioloigcal replicates were kept for further analysis.  The 57 families which passed this threshold were then used with the R package `DESeq2` to test for differential epxression among all pairs of families.
+  
+ The result of this step is a list of 1596 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
+ 
+ [Generate pairwise DE tests markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0.Rmd)
