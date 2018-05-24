@@ -46,9 +46,9 @@ Data Subject Type | Data File Type | Path | Notes
 |  |*EW bio reps* | `./bio_EW/Sample_<animal_id>/` | 
 |  |*LGEP bio reps* | `./bio_LGEP/Sample_<animal_id>/` | 
 **experimental data resources**  | | `/media/disk6/ARF/RNASEQ/shared/resources` | Experiment information
-|  |*sequencing* | `./exptdesign/sequencing` | `./EWtarfiles or ./LGEPtarfiles`
-|  |*pedigree* | `./pedigree` | `./EWfasta or ./LGEPfasta`
-|  |*phenotypes* | `./phenos` | `./EWfasta or ./LGEPfasta`
+|  |*sequencing* | `./exptdesign/sequencing` | 
+|  |*pedigree* | `./pedigree` | 
+|  |*phenotypes* | `./phenos` | 
 
 
 * All scripts and markdown files relating to this project are stored within this repository.
