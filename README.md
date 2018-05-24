@@ -76,7 +76,7 @@ Data Subject Type | Data File Type | Path | Notes
   
  The result of this step is a list of 1596 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
  
- [Generate pairwise DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0.Rmd)
+ [Generate pairwise DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/analyses/DESEQ2_bio.0.Rmd)
  
  
 ### Step4 - Conduct DE tests among State of origin
@@ -85,4 +85,4 @@ Data Subject Type | Data File Type | Path | Notes
   
  The result of this step is a list of 840 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
  
- [Generate State origin DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/DESEQ2_bio.0_states.Rmd)
+ [Generate State origin DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/analyses/DESEQ2_bio.0_states.Rmd)
