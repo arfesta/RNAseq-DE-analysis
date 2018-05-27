@@ -86,3 +86,11 @@ Data Subject Type | Data File Type | Path | Notes
  The result of this step is a list of 840 comparisons.  Each comparison contains the results from DESeq2 between family X vs. family Y.
  
  [Generate State origin DE tests: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/analyses/DESEQ2_bio.0_states.Rmd)
+ 
+ ### Step5 - Conduct DE contrast between high and low volume
+
+  Families which had **3 or more** bioloigcal replicates and contained a volume breeding value were kept for this analysis.  The bottom and upper quartile of the volume phenotypic distribution were used with DESeq2 to generate a contrast between high and low volume breeding value families.
+  
+ The result of this step is a single comparison between 10 low volume families and 11 high volume families.
+ 
+ [Generate High vs Low vol DE test: markdown file](https://github.com/arfesta/RNAseq-DE-analysis/blob/master/analyses/DESEQ2_high.vs.low.vol.Rmd)
