@@ -1,0 +1,53 @@
+---
+title: 'DE analysis: High vs. Low Volume'
+author: "Adam Festa"
+date: "May 26, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Load previous dds object
+
+For this script we can start with the dds object that was previously created with the biological replicate counts, see: `DESEQ2_bio.0.Rmd`.
+
+```{r pressure, echo=FALSE}
+setwd("/media/disk6/ARF/RNASEQ/DE-analysis/RNAseq-DE-analysis/analyses/")
+suppressPackageStartupMessages(library(DESeq2))
+#suppressPackageStartupMessages(library(BiocParallel))
+#register(MulticoreParam(63))
+load("/media/disk6/ARF/RNASEQ/DE-analysis/data/ddstxi_bio_0.v2.RData")
+```
+
+
+## Identify high and low volume families
+
+```{r filt.dat}
+low.vol.fams <- unique(as.character(ddsTxi$fam_id)[which(ddsTxi$Volume < 108.52)])
+high.vol.fams <- unique(as.character(ddsTxi$fam_id)[which(ddsTxi$Volume > 127.54)])
+```
+
+## Run high vs. low comparison 
+
+```{r}
+all.fams <- as.character(unique(ddsTxi$fam_id))
+high.vol.fams <- paste0("fam_id",high.vol.fams)
+low.vol.fams <- paste0("fam_id",low.vol.fams)
+
+high.vol.index <- which(resultsNames(ddsTxi) %in% high.vol.fams)
+# There are 11 high volume families (-1/11) for each contrast
+low.vol.index <- which(resultsNames(ddsTxi) %in% low.vol.fams)
+# There are 10 low volume families (1/10 for each contrast)
+contrasts <- rep(0,length(resultsNames(ddsTxi)))
+contrasts[high.vol.index] <- -1/11
+contrasts[low.vol.index] <- 1/10
+high_vs_low_vol.results <- results(ddsTxi, 
+            contrast = contrasts, 
+            parallel = T)
+```
+
+### Save Workspace 
+ 
+```{r save.wkspace}
+save.image(file = "DESEQ2_high.vs.low.vol.RData",compress = T)
+```
